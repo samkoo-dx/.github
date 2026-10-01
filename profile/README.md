@@ -10,6 +10,7 @@
 ## How We Work
 - 모든 변경은 이슈 등록 → 브랜치 작업 → Pull Request → 코드 리뷰 순서로 진행합니다.
 - 작업 규칙은 [CONTRIBUTING](../CONTRIBUTING.md)을 따릅니다.
+- 작업 전 반드시 읽고 이해해주시길 바랍니다.
 
 ## Contact
 - 문의: 삼구아이앤씨 DX전략팀
