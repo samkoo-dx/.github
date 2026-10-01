@@ -58,4 +58,4 @@ body:
     id: due
     attributes:
       label: 희망 일정
-      placeholder: 2026-10-31
+      placeholder: "2026-10-31"
