@@ -1,0 +1,56 @@
+name: 오류 신고
+description: 발견된 오류 · 장애 등록
+title: "[오류] "
+labels: ["error"]
+projects: ["samkoo-dx/1"]
+body:
+  - type: markdown
+    attributes:
+      value: "작성 규칙: 항목별 1~3줄 요약, 개인정보 · 비밀정보 기재 금지"
+  - type: dropdown
+    id: system
+    attributes:
+      label: 시스템
+      options: [FMS, ePASS, 월간보고, 구매MRO, Sayme, 기타]
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options: ["P1 (당일)", "P2 (주중)", "P3 (일정 협의)"]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 오류 내용
+      description: 어떤 문제인지, 3줄 이내
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 방법
+      value: |
+        1. 
+        2. 
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: 기대 결과
+    validations:
+      required: true
+  - type: input
+    id: actual
+    attributes:
+      label: 실제 결과
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: 발생 환경
+      placeholder: "화면(메뉴) · 발생 일시"
