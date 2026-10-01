@@ -1,0 +1,61 @@
+name: 기능 요청
+description: 신규 기능 · 개선 요청 등록
+title: "[기능] "
+labels: ["feature"]
+projects: ["samkoo-dx/1"]
+body:
+  - type: markdown
+    attributes:
+      value: "작성 규칙: 항목별 1~3줄 요약, 서술형 문장 · 서론 · 이모지 금지"
+  - type: input
+    id: req
+    attributes:
+      label: 요구사항 ID
+      placeholder: REQ-012
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: 시스템
+      options: [FMS, ePASS, 월간보고, 구매MRO, Sayme, 기타]
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options: ["P1 (당일)", "P2 (주중)", "P3 (일정 협의)"]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 요청 내용
+      description: 무엇을 만드는지, 3줄 이내
+      placeholder: "- 근태 집계 화면 기간 필터 추가"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 요청 배경
+      description: 왜 필요한지, 2줄 이내
+      placeholder: "- 월말 집계 시 기간 조회 불가"
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: 완료 기준
+      description: 확인 가능한 체크리스트
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+  - type: input
+    id: due
+    attributes:
+      label: 희망 일정
+      placeholder: 2026-10-31
