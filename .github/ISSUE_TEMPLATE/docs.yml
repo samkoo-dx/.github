@@ -1,0 +1,50 @@
+name: 문서
+description: 문서 추가 · 변경 등록 (README, 사용 안내, 규칙 등)
+title: "[문서] "
+labels: ["docs"]
+projects: ["samkoo-dx/1"]
+body:
+  - type: markdown
+    attributes:
+      value: "작성 규칙: 항목별 1~3줄 요약, 개인정보 · 비밀정보 기재 금지"
+  - type: dropdown
+    id: system
+    attributes:
+      label: 시스템
+      options: [FMS, ePASS, 월간보고, 구매MRO, Sayme, 기타]
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options: ["P1 (당일)", "P2 (주중)", "P3 (일정 협의)"]
+    validations:
+      required: true
+  - type: input
+    id: doc
+    attributes:
+      label: 대상 문서
+      placeholder: "README.md, docs/사용안내.md 또는 신규"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 작성 · 수정 내용
+      description: 추가 · 변경할 내용, 3줄 이내
+      placeholder: "- 근태 집계 화면 사용 방법 추가"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 요청 배경
+      description: 왜 필요한지, 2줄 이내
+    validations:
+      required: true
+  - type: input
+    id: due
+    attributes:
+      label: 희망 일정
+      placeholder: "2026-10-31"
