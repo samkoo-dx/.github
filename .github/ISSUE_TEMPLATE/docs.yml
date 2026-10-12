@@ -1,4 +1,4 @@
-name: 문서
+name: 문서 작성
 description: 문서 추가 · 변경 등록 (README, 사용 안내, 규칙 등)
 title: "[문서] "
 labels: ["docs"]
