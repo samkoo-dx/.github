@@ -1,0 +1,63 @@
+name: 테스트
+description: 테스트 코드 작성 · 테스트 수행 등록
+title: "[테스트] "
+labels: ["test"]
+projects: ["samkoo-dx/1"]
+body:
+  - type: markdown
+    attributes:
+      value: "작성 규칙: 항목별 1~3줄 요약, 서술형 문장 · 서론 · 이모지 금지"
+  - type: dropdown
+    id: system
+    attributes:
+      label: 시스템
+      options: [FMS, ePASS, 월간보고, 구매MRO, Sayme, 기타]
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options: ["P1 (당일)", "P2 (주중)", "P3 (일정 협의)"]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 테스트 대상
+      description: 무엇을 검증하는지, 3줄 이내
+      placeholder: "- 근태 집계 화면 기간 필터"
+    validations:
+      required: true
+  - type: textarea
+    id: cases
+    attributes:
+      label: 테스트 항목
+      description: 확인할 상황과 기대 결과
+      value: |
+        1. 
+        2. 
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 테스트 방식
+      options: ["자동 테스트 코드 작성", "수동 확인", "둘 다"]
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: 완료 기준
+      description: 확인 가능한 체크리스트
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+  - type: input
+    id: due
+    attributes:
+      label: 희망 일정
+      placeholder: "2026-10-31"
