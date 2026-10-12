@@ -1,0 +1,63 @@
+name: 리팩토링
+description: 동작 변경 없는 코드 구조 개선 등록
+title: "[리팩토링] "
+labels: ["refactor"]
+projects: ["samkoo-dx/1"]
+body:
+  - type: markdown
+    attributes:
+      value: "작성 규칙: 항목별 1~3줄 요약, 화면 · 결과 변경 시 기능 요청으로 등록"
+  - type: dropdown
+    id: system
+    attributes:
+      label: 시스템
+      options: [FMS, ePASS, 월간보고, 구매MRO, Sayme, 기타]
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options: ["P1 (당일)", "P2 (주중)", "P3 (일정 협의)"]
+    validations:
+      required: true
+  - type: textarea
+    id: target
+    attributes:
+      label: 개선 대상
+      description: 파일 · 화면 · 기능 단위, 3줄 이내
+      placeholder: "- src/attendance/summary.js"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 개선 이유
+      description: 현재 문제점, 2줄 이내
+      placeholder: "- 동일 집계 로직 3곳 중복"
+    validations:
+      required: true
+  - type: textarea
+    id: how
+    attributes:
+      label: 개선 방향
+      placeholder: "- 공통 함수로 분리"
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: 동작 동일 확인 방법
+      description: 변경 전후 결과가 같은지 확인하는 방법
+      placeholder: "- 10월 근태 집계 결과 변경 전후 비교"
+    validations:
+      required: true
+  - type: textarea
+    id: done
+    attributes:
+      label: 완료 기준
+      value: |
+        - [ ] 기존 기능 동작 동일
+        - [ ] 
+    validations:
+      required: true
