@@ -2,7 +2,6 @@ name: 테스트
 description: 테스트 코드 작성 · 테스트 수행 등록
 title: "[테스트] "
 labels: ["test"]
-projects: ["samkoo-dx/1"]
 body:
   - type: markdown
     attributes:
