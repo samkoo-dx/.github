@@ -2,7 +2,6 @@ name: 리팩토링
 description: 동작 변경 없는 코드 구조 개선 등록
 title: "[리팩토링] "
 labels: ["refactor"]
-projects: ["samkoo-dx/1"]
 body:
   - type: markdown
     attributes:
