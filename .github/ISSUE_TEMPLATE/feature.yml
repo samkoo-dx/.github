@@ -2,7 +2,6 @@ name: 기능 요청
 description: 신규 기능 · 개선 요청 등록
 title: "[기능] "
 labels: ["feature"]
-projects: ["samkoo-dx/1"]
 body:
   - type: markdown
     attributes:
