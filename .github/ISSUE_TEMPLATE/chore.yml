@@ -1,0 +1,58 @@
+name: 운영 작업
+description: CI · 자동화 · 저장소 설정 · 배포 설정 등 운영 작업 등록 (화면 · 기능 변경 없음)
+title: "[운영] "
+labels: ["chore"]
+body:
+  - type: markdown
+    attributes:
+      value: "작성 규칙: 항목별 1~3줄 요약, 서술형 문장 · 서론 · 이모지 금지"
+  - type: dropdown
+    id: system
+    attributes:
+      label: 시스템
+      options: [FMS, ePASS, 월간보고, 구매MRO, Sayme, 공통(DX-automation), 기타]
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options: ["P1 (당일)", "P2 (주중)", "P3 (일정 협의)"]
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: 작업 내용
+      description: 무엇을 바꾸는지 (CI · 워크플로 · 설정 파일 등), 3줄 이내
+      placeholder: "- .github/workflows/ci.yml 타입 검사 단계 추가"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: 작업 배경
+      description: 왜 필요한지, 2줄 이내
+      placeholder: "- 타입 오류가 배포 단계에서 처음 발견됨"
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: 영향 범위
+      description: 개발자 작업 방식 · 검사 · 배포에 생기는 변화
+      placeholder: "- 이후 PR에서 타입 오류 시 병합 차단"
+  - type: textarea
+    id: done
+    attributes:
+      label: 완료 기준
+      description: 확인 가능한 체크리스트
+      value: |
+        - [ ] 
+    validations:
+      required: true
+  - type: input
+    id: due
+    attributes:
+      label: 희망 일정
+      placeholder: "2026-10-31"
