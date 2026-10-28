@@ -1,0 +1,82 @@
+# 운영 반영(배포) 요청 · 이슈 등록 시 「버전 발행」 자동 실행 → 승인 메일 · /승인 → 배포
+# 동작 레포: release.yml 에 issues 시작 조건이 있는 레포 (그 외 레포는 안내 댓글 없이 무시)
+name: 운영 반영 요청
+description: 운영 배포 요청 (등록 즉시 버전 발행 · 승인 요청 발송) · 직접 작성
+title: "[배포 요청] "
+labels: ["deploy"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        - 등록하면 바로 버전 번호가 정해지고 승인자에게 메일이 발송됩니다.
+        - **핵심 내용**은 승인 메일 첫머리에 그대로 들어갑니다. 현업 기준 쉬운 말로 작성해 주세요.
+        - AI 도구로 작성하지 말고 직접 작성해 주세요.
+  - type: dropdown
+    id: bump
+    attributes:
+      label: 버전 종류
+      options:
+        - 오류 수정 (PATCH · 오류 수정 · 문구 · 개선)
+        - 기능 추가 (MINOR · 새 기능 · 현업이 달라짐을 느끼는 변경)
+        - 대규모 변경 (MAJOR · 업무 방식 변경 · 재교육 · 사전 공지)
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: 핵심 내용
+      description: 승인 메일 첫머리에 들어가는 내용 (무엇이 바뀌는지 · 왜 지금 반영하는지)
+      placeholder: "- 월말보고 표에 ○○ 열 추가\n- 이번 달 마감 전 반영 필요"
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: 작성일자
+      placeholder: "2026-10-28"
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: 작성자
+      placeholder: "홍길동"
+    validations:
+      required: true
+  - type: dropdown
+    id: db
+    attributes:
+      label: DB 변경 여부
+      options:
+        - "X"
+        - "O"
+    validations:
+      required: true
+  - type: textarea
+    id: db-detail
+    attributes:
+      label: DB 변경 내용
+      description: DB 변경 O 일 때 필수 (변경 대상 · 내용 · 되돌리기 방법)
+      placeholder: "- reports 컬렉션 ○○ 필드 추가\n- 되돌리기: 필드 무시 (삭제 불필요)"
+  - type: textarea
+    id: prs
+    attributes:
+      label: 포함 PR
+      description: 이번 반영에 들어가는 PR 번호 (자동 수집 목록과 대조)
+      placeholder: "#12, #15"
+    validations:
+      required: true
+  - type: textarea
+    id: pr-detail
+    attributes:
+      label: 포함 PR 핵심 업데이트 내용
+      placeholder: "- #12 ○○ 화면 필터 추가\n- #15 저장 오류 수정"
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 확인
+      options:
+        - label: 직접 작성함 (AI 도구 작성 아님)
+          required: true
