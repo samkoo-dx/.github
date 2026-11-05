@@ -63,7 +63,7 @@ body:
     attributes:
       label: 포함 PR
       description: 비우면 미반영 PR 자동 수집 (적으면 자동 수집 목록과 대조)
-      placeholder: "#12, #15"
+      placeholder: "비워 두면 지난 배포 이후 병합된 PR이 자동으로 들어갑니다 (직접 쓸 때 예: #12, #15)"
     validations:
       required: false
   - type: textarea
@@ -71,7 +71,7 @@ body:
     attributes:
       label: 포함 PR 핵심 업데이트 내용
       description: 비우면 PR 제목으로 자동 작성
-      placeholder: "- #12 ○○ 화면 필터 추가\n- #15 저장 오류 수정"
+      placeholder: "비워 두면 PR 제목으로 자동 작성됩니다\n(직접 쓸 때 예: - #12 ○○ 화면 필터 추가)"
     validations:
       required: false
   - type: checkboxes
